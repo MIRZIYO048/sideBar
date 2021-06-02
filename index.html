@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <title>Side Bar</title>
+</head>
+<body>
+    <div class="sk-cube-grid">
+        <p style="margin-left: -40px; margin-bottom: 20px;">Loading</p>
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+        <a class="sk_link" href="" style="margin-top: 100px; color: aliceblue; width: 140px; justify-content: center; align-items: center; height: 50px; font-size: 30px; margin-left: -40px; margin-bottom: 20px; border: 2px solid rgb(185, 151, 151); outline: none; display: flex;">Enter me</a>
+      </div>
+    <div class="nav">
+        <i class="fas fa-bars bar"></i>
+        <a href="#!" class="btns">Bar</a>
+            <ul class="bar-list">
+        <button class="buttons">X</button>
+                <p class="bar-text">Side Bar</p>
+                <li><a class="bar-link" href="#!">Home</a></li>
+                <li><a class="bar-link" href="#!">About</a></li>
+                <li><a class="bar-link" href="#!">Blog</a></li>
+                <li><a class="bar-link" href="#!">Portfolio</a></li>
+                <li><a class="bar-link" href="#!">Contact</a></li>
+            </ul>
+            
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+            <div class="animation start-home"></div>
+          </nav>
+    </div>
+    
+    <main>
+        <h1>Side <span>Bar</span></h1>
+        <p>I<span>t</span> is from MIRziYo </p>
+    </main>
+        
+    
+<script>
+    class Bar {
+    constructor(barop){
+        this.sbars = document.querySelector(barop.sbar)
+        this.nav = document.querySelector(barop.nav)
+        this.nav1 = document.querySelector(barop.nav1)
+        this.barlist = document.querySelector(barop.barlist)
+        this.button = document.querySelector(barop.buttonx)
+        this.body = document.querySelector(barop.body)
+        this.main = document.querySelector(barop.main)
+        this.loading = document.querySelector(barop.loading)
+        
+        this.sbars.addEventListener('click' , () => {
+            setTimeout(() => {
+                this.loading.style.transition = '2s'
+                this.sbars.style.display = 'none'
+                this.nav.style.display = 'none'
+                this.nav1.style.display = 'none'
+                this.barlist.style.display = 'none'
+                this.button.style.display = 'none'
+                this.main.style.display = 'none'
+                this.loading.style.display = 'block'
+            }, 10000);
+            this.loading.style.display = 'none'
+            this.barlist.style.right = '0'
+            this.barlist.style.top = '0'
+            this.nav.style.opacity = '0'
+            this.nav.style.transition = '1s'
+            this.nav.style.width = '10px'
+            this.sbars.style.opacity = '0'
+            this.button.style.opacity = '1'
+        })
+        this.button.addEventListener('click' , () => {
+            this.barlist.style.right = '0'
+            this.button.style.opacity = '0'
+            this.sbars.style.opacity = '1'
+            this.barlist.style.top = '-100%'
+            // this.style.transition = '2s'
+            this.nav.style.opacity = '1'
+            this.nav.style.transition = '1s'
+            this.nav.style.width = '590px'
+            // this.nav.style = `margin-left: -590px`
+            // console.log('bosildi');
+        })
+    }
+
+    
+}
+
+const bar = new Bar ({
+    body: 'body',
+    sbar: '.bar',
+    main: 'main',
+    nav: 'nav',
+    nav1: '.nav',
+    barlist: '.bar-list',
+    buttonx: 'button',
+    loading: '.sk-cube-grid'
+})
+</script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    text-decoration: none;
+    list-style: none;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #2b3c4d;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+	background: #34495e;
+    margin-top: 30px;
+    height: 100px;
+    align-items: center;
+	box-shadow: 10px 10px 10px 0 rgba(0,0,0,.1);
+}
+.btns{
+    height: 50px;
+    text-shadow: 1px 1px 2px grey, 0 0 1em green, 0 0 0.2em green;
+    box-shadow: -15px 10px 10px 9px rgb(190, 248, 208);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    left: 100px;
+    position: relative;
+    background: #8db4b2;
+    width: 110px;
+    /* text-align: center; */
+    font-size: 25px;
+    color: #00ffbf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .6s ease-in-out;
+}
+.btns:hover{
+    box-shadow: -15px 10px 10px 9px rgb(0, 233, 233);
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    background: #00ffbf;
+    color: #8db4b2;
+}
+nav{
+    right: 110px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+	/* margin: 270px auto 0; */
+	width: 590px;
+	height: 50px;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a{
+	font-size: 15px;
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	line-height: 50px;
+	position: relative;
+    right: 0;
+	z-index: 1;
+	display: inline-block;
+	text-align: center;
+}
+nav .animation{
+	position: absolute;
+	height: 100%;
+	/* height: 5px; */
+	top: 0;
+	/* bottom: 0; */
+	z-index: 0;
+	background: #1abc9c;
+	border-radius: 8px;
+	transition: all .8s ease 0s;
+}
+nav a:nth-child(1){
+	width: 100px;
+}
+nav .start-home, a:nth-child(1):hover~.animation{
+	width: 100px;
+	left: 0;
+    box-shadow: 0 0 10px 9px rgb(190, 248, 208);
+}
+nav a:nth-child(2){
+	width: 110px;
+}
+nav a:nth-child(2):hover~.animation{
+	width: 110px;
+	left: 100px;
+    box-shadow: 0 0 10px 9px rgb(0, 0, 0);
+}
+nav a:nth-child(3){
+	width: 100px;
+}
+nav a:nth-child(3):hover~.animation{
+	width: 100px;
+	left: 210px;
+    box-shadow: 0 0 10px 9px rgb(181, 241, 200);
+}
+nav a:nth-child(4){
+	width: 160px;
+}
+nav a:nth-child(4):hover~.animation{
+	width: 160px;
+	left: 310px;
+    box-shadow: 0 0 10px 9px rgb(0, 0, 0);
+}
+nav a:nth-child(5){
+	width: 120px;
+}
+nav a:nth-child(5):hover~.animation{
+	width: 120px;
+	left: 470px;
+    box-shadow: 0 0 10px 9px rgb(192, 255, 213);
+}
+
+
+h1{
+    font-family: sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    
+    text-align: center;
+    margin: 200px auto;
+    color: white;
+    margin-bottom: 50px;
+}
+h1 span{
+    color: black;
+}
+p{
+    color: wheat;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+}
+p span{
+    text-transform: none;
+}
+.bar{
+    left: -100%;
+    position: relative;
+    display: none;
+    
+}
+.bar:hover{
+    z-index: 999999;
+	box-shadow: 0 0 6px 6px rgb(190, 190, 190);
+    background: rgb(136, 135, 135);
+}
+.buttons{
+    transition: 1s;
+    font-weight: 900;
+    background: rgba(154, 196, 41, 0.849); 
+    border: 2px solid red; 
+    width: 50px; 
+    height: 50px;
+    font-size: 20px; 
+    border-radius: 50%; 
+    position: relative;
+    cursor: pointer;
+    margin-left: -300px;
+    margin-top: 0; 
+}
+.buttons:hover{
+    background: rgba(36, 223, 191, 0.849); 
+}
+/* .bar:active .bar-list{
+    /* left: 0; 
+    display: inline-block;
+}/*
+.bar:active .nav{
+    opacity: 0;
+} */
+/* .bar:active{
+    /* left: 350px;
+ } */
+.bar-list{
+    overflow: hidden;
+    cursor: initial;
+    transition: 2s;
+    right: 0;
+    top: -100%;
+    margin-top: 15px;
+    /* position: relative; */
+    /* left: -500px; */
+    border-radius: 20px;
+    /* display: none; */
+    height: 94vh;
+    position: absolute;
+    /* top: 0; */
+    z-index: 1;
+    background: rgba(146, 112, 1, 0.144);
+    /* margin-left: 20px; */
+    width: 350px;
+    text-align: center;
+}
+.bar-link{
+    font-weight: 700;
+    padding: 15px 100px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid tomato;
+    color: wheat;
+    background: rgba(0, 0, 0, 0.65);
+    font-size: 23px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 30px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    letter-spacing: 3px;
+}
+.bar-link:hover{
+    text-shadow: -3px 0 0 rgba(255,0,0,.7),
+    1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue,
+	3px 0 0 rgba(0,255,255,.7);
+    transition: all .4s ease;
+    background: rgba(65, 66, 66, 0.918);
+}
+
+.bar-text{
+    font-weight: 700;
+    color: wheat;
+    font-size: 40px;
+    margin-top: -50px;
+}
+
+@media(max-width: 576px){
+    .btns{
+        text-align: center;
+        /* left: -30%; */
+    }
+    .bar{
+    z-index: 99999;
+    transition: .5s;
+    left: -60px;
+    position: relative;
+    /* transition: .3s; */
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    display: block;
+    background: rgb(37, 36, 36);
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(197, 182, 135);
+    padding: 10px;
+	box-shadow: 0 0 6px 6px rgb(0, 0, 0);
+    }
+    nav{
+        width: 10px;
+        right: 70%;
+        opacity: 0;
+        transition: 1s;
+        flex-direction: column;
+        display: none;
+    }
+    .bar-list{
+        width: 280px;
+        height: 96vh;
+    }
+    .nav{
+        display: flex;
+        justify-content: center;
+    }
+    /* .bar-link{
+        /* margin-top: 10px;
+    } */
+    .bar-text{
+        margin-top: 0;
+        text-align: center;
+        /* font-size: 20px; */
+        font-weight: 700;
+        /* margin-top: -30px; */
+        margin-bottom: 15px;
+    }
+    .buttons{
+    z-index: 99999;
+    transition: .5s;
+    left: 10px;
+    top: 55px;
+    position: fixed;
+    /* transition: .3s; */
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    display: flex;
+    background: rgb(37, 36, 36);
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 100px;
+    border-radius: 10px;
+    border: 1px solid rgb(197, 182, 135);
+    padding: 10px;
+    font-weight: 400;
+    opacity: 0;
+	box-shadow: 0 0 6px 6px rgb(0, 0, 0);
+    }
+    .buttons:hover{
+        z-index: 999999;
+        box-shadow: 0 0 6px 6px rgb(190, 190, 190);
+        background: rgb(136, 135, 135);
+    }
+}
+
+
+
+
+.sk-cube-grid {
+    transition: 2s;
+    width: 40px;
+    height: 40px;
+    margin: 250px auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.sk_link:hover{
+    background: rgb(63, 60, 60);
+}
+  .sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: rgb(248, 248, 248);
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+  }
+  .sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s; }
+  .sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+  .sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s; }
+  .sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+  .sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  
+  @-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+      -webkit-transform: scale3D(1, 1, 1);
+              transform: scale3D(1, 1, 1);
+    } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1); 
+    }
+  }
+  
+  @keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+      -webkit-transform: scale3D(1, 1, 1);
+              transform: scale3D(1, 1, 1);
+    } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1);
+    } 
+  }
+    </style>
+</body>
+</html>
